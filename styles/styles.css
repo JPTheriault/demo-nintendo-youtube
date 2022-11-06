@@ -1,0 +1,141 @@
+/* GENERIC */
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+/* ELEMENTS */
+
+body {
+    height: 200vh;
+    margin: 0;
+    padding: 6vw;
+}
+
+main {
+    margin-top: 50px;
+}
+
+h1 {
+    margin: 0;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+hr {
+    margin-top: 50px;
+}
+
+
+/* COMPONENTS */
+
+/* Gallery */
+
+.gallery {
+    display: grid;
+}
+
+.gallery--3 {
+    column-gap: 2.5vw;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 2.5vw;
+}
+
+.gallery__item,
+.gallery__image {
+    width: 100%;
+}
+
+.gallery__item {
+    display: flex;
+    height: 20vw;
+}
+
+.gallery__image {
+    cursor: pointer;
+    object-fit: cover;
+}
+
+/* Modal */
+
+.modal {
+    /* À compléter */
+    transition: opacity .3 ease;
+
+    align-items: center;
+    background-color: rgba(0,0,0,.9);
+    display: flex;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 6vw;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.modal--close {
+    /* À écrire */
+    left: -105vw;
+
+}
+
+.modal--open {
+    /* À écrire */
+    left: 0vw;
+
+}
+
+.modal__content {
+    height: fit-content;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+.modal__content::after {
+    content: "";
+    display: block;
+}
+
+.modal__content--youtube--16-9::after {
+    padding-bottom: 56.25%;
+}
+
+.modal__content--youtube__video {
+    left: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.modal__close--wrapper {
+    cursor: pointer;
+    height: 70px;
+    padding: 25px;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    width: 70px;
+}
+
+.modal__close {
+    background: linear-gradient(transparent, transparent 9px, white 9px, white, 11px, transparent 11px),
+                linear-gradient(to right, transparent, transparent 9px, white 9px, white, 11px, transparent 11px);
+    cursor: pointer;
+    height: 20px;
+    transform: rotate(45deg);
+    transition: transform .3s ease;
+    width: 20px;
+}
+
+.modal__close--wrapper:hover .modal__close {
+    transform: rotate(0);
+}
